@@ -22,10 +22,22 @@ ipcMain.on('vidSubmit', (e, {path, name}) => {
     .screenshots({
         count: 1,
         folder: './thumbnails',
-        filename: `${name.slice(0, name.length - 4)}.png`
+        filename: `${name}.png`
     })
     .ffprobe((err, metadata) => {
-        mainWindow.webContents.send('vidDuration', metadata.format.duration)
-        console.log(metadata)
+        const info = {
+            res: {
+                width: metadata.streams[0].width,
+                height: metadata.streams[0].height
+            },
+            aspectRatio: metadata.streams[0].display_aspect_ratio,
+            frameRate: metadata.streams[0].r_frame_rate,
+            creationTime: metadata.format.tags.creation_time,
+            format: metadata.format.format_long_name,
+            size: metadata.format.size,
+            duration: metadata.format.duration
+        }
+
+        mainWindow.webContents.send('vidInfo', info)
     })
 })

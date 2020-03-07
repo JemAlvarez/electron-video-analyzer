@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^7.1.10",
-    "fluent-ffmpeg": "^2.1.2"
+    "filesize": "^6.1.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "moment": "^2.24.0"
   }
 }
