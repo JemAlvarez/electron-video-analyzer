@@ -14,7 +14,7 @@ app.on('ready', () => {
     mainWindow.loadURL(`file://${__dirname}/index.html`)
 })
 
-ipcMain.on('vidSubmit', (e, {path, name}) => {
+ipcMain.on('vidSubmit', (e, {path, fileName}) => {
     ffmpeg(path)
     .on('end', () => {
         mainWindow.webContents.send('thumbnailDone')
@@ -22,7 +22,7 @@ ipcMain.on('vidSubmit', (e, {path, name}) => {
     .screenshots({
         count: 1,
         folder: './thumbnails',
-        filename: `${name}.png`
+        filename: `${fileName}.png`
     })
     .ffprobe((err, metadata) => {
         const info = {

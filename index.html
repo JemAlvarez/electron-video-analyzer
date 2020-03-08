@@ -5,36 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Video Info</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Video Info</h1>
-
-    <form>
-        <div>
-            <label>Select a video</label>
+    <h1 class="title">Video Info</h1>
+    <form class="vidForm">
+        <div class="vidForm_file">
+            <label for="file_input" class="vidForm_submit">Select Video</label>
+            <input id="file_input" class="file_input" type="file" accept="video/*">
+            
+            <button class="vidForm_submit">Get Info!</button>
         </div>
-        <div>
-            <input class="file_input" type="file" accept="video/*">
-        </div>
-
-        <button>Get Info!</button>
-
-        <div>
-            Duration: <div id="dur"></div>
-        </div>
-
-        <div>Last Modified Date (frontend): </div>
-        <div>Path (frontend): </div>
-        <div>Size (frontend): </div>
-        <div>Name (frontend): </div>
-        <div>Format name (backend): </div>
-        <div>Resolution (backend): </div>
-        <div>Aspect ration (backend): </div>
-        <div>Frame rate (backend): </div>
-        <div>Creation Time (backend): </div>
-
-        <img src="" class="thumbnail">
+        <p class="error disabled">Select a video file.</p>
     </form>
+
+    <div class="info disabled">
+        <img src="" class="info_img">
+        <div class="info_el">Name: <span class="info_el--info name"></span></div>
+        <div class="info_el">Path: <span class="info_el--info path"></span></div>
+        <div class="info_el">Size: <span class="info_el--info size"></span></div>
+        <div class="info_el">Duration: <span class="info_el--info duration"></span></div>
+        <div class="info_el">Format name: <span class="info_el--info format"></span></div>
+        <div class="info_el">Resolution: <span class="info_el--info resolution"></span></div>
+        <div class="info_el">Aspect ration: <span class="info_el--info aspectRatio"></span></div>
+        <div class="info_el">Frame rate: <span class="info_el--info frameRate"></span></div>
+        <div class="info_el">Creation Time: <span class="info_el--info creationTime"></span></div>
+    </div>
 
     <script src="./app.js"></script>
 </body>

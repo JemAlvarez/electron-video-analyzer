@@ -1,0 +1,77 @@
+/* responsiveness */
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    outline: none;
+}
+
+body {
+    background-color: #060D15;
+}
+
+h1.title {
+    color: #60CB9D;
+    margin: 30px 0 10px 20px;
+    text-transform: uppercase;
+}
+
+.vidForm_file {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 30%;
+}
+
+.file_input {
+    display: none;
+}
+
+.vidForm_submit {
+    background-color: #0E2024;
+    border: none;
+    border-radius: 50px;
+    color: #60CB9D;
+    font-size: 15px;
+    padding: 7px 14px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.vidForm_submit:hover {
+    background-color: rgb(10, 23, 26);
+    cursor: pointer;
+}
+
+.info {
+    border: 5px solid #171A1F;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.info_el {
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+.info_el--info {
+    color: #60CB9D;
+    text-transform: lowercase;
+}
+
+.info_img {
+    height: auto;
+    margin: 30px;
+    width: 500px;
+}
+
+.error {
+    color: rgb(146, 37, 37);
+    text-align: center;
+}
+
+.disabled {
+    display: none;
+}
